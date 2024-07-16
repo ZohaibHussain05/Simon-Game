@@ -1,4 +1,32 @@
-*{
-    margin:0px;
-    padding: 0px;
+body{
+    text-align: center;
+}
+
+.btn{
+    height: 200px;
+    width: 200px;
+    border: 10px solid black;
+    border-radius: 20%;
+    margin: 2rem;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.red{
+    background-color: rgba(242, 57, 57, 0.794);
+}
+
+.yellow{
+    background-color: rgba(237, 237, 85, 0.839);
+}
+
+.green{
+    background-color: rgba(58, 255, 58, 0.716);
+}
+
+.blue{
+    background-color: rgba(85, 85, 225, 0.851);
 }

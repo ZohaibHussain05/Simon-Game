@@ -53,6 +53,10 @@ function checkSeq(indx){
             setTimeout(levelUP,1000);
     }else{
         h2.innerHTML = `Game over! Your score is <b>${level}</b><br> Press restart to play again.`;
+        document.querySelector("body").style.backgroundColor = "red";
+        setTimeout(function(){
+            document.querySelector("body").style.backgroundColor = "White";
+        },250)
         resetGame();
     }
 }

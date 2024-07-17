@@ -56,3 +56,13 @@ body{
 .strt-btn:hover{
     box-shadow: 3px 3px 8px black;
 }
+
+@media(max-width: 560px){
+    .btn{
+        height: 100px;
+        width: 100px;
+        border: 5px solid black;
+        border-radius: 20%;
+        margin: 1rem;
+    }
+}

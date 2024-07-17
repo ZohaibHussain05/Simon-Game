@@ -31,6 +31,10 @@ body{
     background-color: rgba(85, 85, 225, 0.851);
 }
 
-.flash{
+.whiteFlash{
     background-color: #fff;
+}
+
+.greenFlash{
+    background-color: green;
 }

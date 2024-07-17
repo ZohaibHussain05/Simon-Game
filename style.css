@@ -43,3 +43,16 @@ body{
     z-index: -2;
     opacity: 0;
 }
+
+.strt-btn{
+    height: 50px;
+    width: 75px;
+    padding: auto;
+    font-weight: 700;
+    border: 2px solid black;
+    box-shadow: 1px 1px 5px black;
+}
+
+.strt-btn:hover{
+    box-shadow: 3px 3px 8px black;
+}

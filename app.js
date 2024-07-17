@@ -5,10 +5,11 @@ let btns = ["red","yellow","green","blue"]
 let gameStart = false;
 let level = 0;
 let h2 = document.querySelector("h2");
-
-document.addEventListener("keypress",function(){
+let startBtn = document.querySelector(".strt-btn");
+startBtn.addEventListener("click",function(){
     if(gameStart == false){
-        console.log("Game Started");
+        startBtn.classList.add("disappear");
+        startBtn.innerText = "Restart";
         gameStart = true;
 
         levelUP();
@@ -51,7 +52,7 @@ function checkSeq(indx){
         if(userSeq.length == gamSeq.length)
             setTimeout(levelUP,1000);
     }else{
-        h2.innerHTML = `Game over! Your score is <b>${level}</b><br> Press any key to start.`;
+        h2.innerHTML = `Game over! Your score is <b>${level}</b><br> Press restart to play again.`;
         resetGame();
     }
 }
@@ -77,4 +78,5 @@ function resetGame(){
     gamSeq = [];
     userSeq = [];
     level = 0;
+    startBtn.classList.remove("disappear");
 }

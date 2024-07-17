@@ -38,3 +38,8 @@ body{
 .greenFlash{
     background-color: green;
 }
+
+.disappear{
+    z-index: -2;
+    opacity: 0;
+}

@@ -36,10 +36,14 @@ function levelUP(){
 
     //Generate random color from btns array
     let randomColor = btns[Math.floor(Math.random()*3)];
-    let randomBtn = document.querySelector(`.${randomColor}`);
     //Add that random color in seq. array
     gamSeq.push(randomColor);
-    gameFlash(randomBtn);
+    //flashing all the game seq
+    for(let i =0; i < gamSeq.length; i++){
+       setTimeout( function(){
+        gameFlash(document.querySelector(`.${gamSeq[i]}`))
+       },(i*750));
+    }
 }
 
 function checkSeq(indx){
@@ -48,6 +52,7 @@ function checkSeq(indx){
             setTimeout(levelUP,1000);
     }else{
         h2.innerText = "Game over! Press any key to start.";
+        resetGame();
     }
 }
 
@@ -65,4 +70,11 @@ function btnPress(){
 let AllBtns = document.querySelectorAll(".btn");
 for(btn of AllBtns){
     btn.addEventListener("click",btnPress);
+}
+
+function resetGame(){
+    gameStart = false;
+    gamSeq = [];
+    userSeq = [];
+    level = 0;
 }

@@ -51,7 +51,7 @@ function checkSeq(indx){
         if(userSeq.length == gamSeq.length)
             setTimeout(levelUP,1000);
     }else{
-        h2.innerText = "Game over! Press any key to start.";
+        h2.innerHTML = `Game over! Your score is <b>${level}</b><br> Press any key to start.`;
         resetGame();
     }
 }

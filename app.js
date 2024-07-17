@@ -4,7 +4,7 @@ let btns = ["red","yellow","green","blue"]
 
 let gameStart = false;
 let level = 0;
-let h1 = document.querySelector("h1");
+let h2 = document.querySelector("h2");
 
 document.addEventListener("keypress",function(){
     if(gameStart == false){
@@ -30,18 +30,36 @@ function userFlash(btn){
 }
 
 function levelUP(){
+    userSeq = []; //reset user input seq
     level++;
-    h1.innerText = `Level ${level}`;
+    h2.innerText = `Level ${level}`;
 
     //Generate random color from btns array
     let randomColor = btns[Math.floor(Math.random()*3)];
     let randomBtn = document.querySelector(`.${randomColor}`);
+    //Add that random color in seq. array
+    gamSeq.push(randomColor);
     gameFlash(randomBtn);
+}
+
+function checkSeq(indx){
+    if(userSeq[indx] === gamSeq[indx]){
+        if(userSeq.length == gamSeq.length)
+            setTimeout(levelUP,1000);
+    }else{
+        h2.innerText = "Game over! Press any key to start.";
+    }
 }
 
 function btnPress(){
     let btn = this;
     userFlash(btn);
+
+    // To track the color of pressed btn we get the id attribute
+    userColor = btn.getAttribute("id");
+    userSeq.push(userColor);
+    // Check that user anwer is correct or not
+    checkSeq(userSeq.length-1);
 }
 
 let AllBtns = document.querySelectorAll(".btn");

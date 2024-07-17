@@ -4,6 +4,7 @@ let btns = ["red","yellow","green","blue"]
 
 let gameStart = false;
 let level = 0;
+let highest_score = 0;
 let h2 = document.querySelector("h2");
 let startBtn = document.querySelector(".strt-btn");
 startBtn.addEventListener("click",function(){
@@ -56,7 +57,11 @@ function checkSeq(indx){
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function(){
             document.querySelector("body").style.backgroundColor = "White";
-        },250)
+        },250);
+        if(level > highest_score){
+            document.querySelector("h3").innerText = `Highest score : ${level}`;
+            highest_score = level;
+        }
         resetGame();
     }
 }

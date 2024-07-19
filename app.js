@@ -37,7 +37,7 @@ function levelUP(){
     h2.innerText = `Level ${level}`;
 
     //Generate random color from btns array
-    let randomColor = btns[Math.floor(Math.random()*3)];
+    let randomColor = btns[Math.floor(Math.random()*4)];
     //Add that random color in seq. array
     gamSeq.push(randomColor);
     //flashing all the game seq
